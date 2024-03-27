@@ -1,0 +1,66 @@
+swagger: "2.0"
+info:
+  title: calculator yaml file for api
+  description: yaml file for api gateway to do arthimetic things.
+  version: 1.0.0
+
+host: us-central1-apache-418304.cloudfunctions.net
+basePath: /
+schemes:
+  - https
+
+paths:
+  /add:
+    post:
+      summary: addition of two num
+      operationId: add
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+      x-google-backend:
+        address: https://add-function-e4hxveg6wq-uc.a.run.app/add
+
+  /sub:
+    post:
+      summary: subtraction of two num
+      operationId: sub
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+      x-google-backend:
+        address: https://sub-function-e4hxveg6wq-uc.a.run.app/sub
+  /mul:
+    post:
+      summary: multiplication of two num
+      operationId: mul
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+      x-google-backend:
+        address: https://mul-function-e4hxveg6wq-uc.a.run.app/mul
+
+  /div:
+    post:
+      summary: division of two num
+      operationId: div
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+      x-google-backend:
+        address: https://div-function-e4hxveg6wq-uc.a.run.app/div
